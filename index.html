@@ -1,0 +1,128 @@
+
+<html>
+ 
+
+
+    <!--Website Title-->
+    <title>ServiceNow Form</title>  
+
+    <!--Link for Bootstrap import-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  
+
+
+    <body>
+    
+        <!--Nav Bar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">ServiceNow Issue Form</a>
+          </nav>
+        
+
+          <form class="form" id ="form">
+            <div class="card card-block w-50 mx-auto" style="background-color:rgb(223, 217, 211)">
+                
+
+            <div class="mx-auto" style="width: 200px;">
+                <span class="label">Full Name</span>
+                    <input type = "text" placeholder="Full Name" id = "fullName" >    
+            </div>
+
+
+            <div class="mx-auto" style="width: 200px;">
+                <span class="label">Organization</span>
+                 <input type = "text" placeholder="Organization" id = "org" >
+            </div>
+    
+         
+         <div class= "mx-auto" style="width: 200px;">
+            <span class="label">Phone</span>
+                 <input type = "tel" placeholder="1234567890" id = "telephone" >
+         </div>
+    
+
+         <div class= "mx-auto" style="width: 200px;">
+            <span class="label">Email</span>
+                 <input type = "email" placeholder="xxx@xxx.com" id = "emailAddress">
+                 <br>
+                 <br>
+         </div>
+
+         
+         
+           <!-- <label>Description of Problem</label>-->
+                <div class="mx-auto">
+                    <textarea type = "string" placeholder="Describe your issue here." id = "description" style= "height:200"></textarea>
+                </div>
+                      
+
+
+         <div class="mx-auto" style="width: 200px;">
+            <br>
+         <p>What is the level of urgency?</p>
+
+            <div>
+            <input type="radio" id="low" name="drone" value="low"
+            checked>
+             <label for="low">Low</label>
+            </div>
+    
+            <div>
+            <input type="radio" id="medium" name="drone" value="medium">
+            <label for="medium">Medium</label>
+            </div>
+    
+            <div>
+            <input type="radio" id="high" name="drone" value="high">
+            <label for="high">High</label>
+            </div>
+
+        </div>
+        
+
+    <br>
+
+
+            <div class= "mx-auto" style="width: 200px;">
+                <span class="label">Address Line 1</span>
+                     <input type = "text" placeholder="Address Line 1" id = "adrLine1">
+             </div>
+    
+
+             <div class= "mx-auto" style="width: 200px;">
+                <span class="label">Address Line 2</span>
+                     <input type = "text" placeholder="Address Line 2" id = "adrLine2">
+             </div>
+    
+
+             <div class= "mx-auto" style="width: 200px;">
+                <span class="label">City</span>
+                     <input type = "text" placeholder="City" id = "city">
+             </div>
+    
+
+             <div class= "mx-auto" style="width: 200px;">
+                <span class="label">State</span>
+                     <input type = "text" placeholder="State" id = "state">
+             </div>
+    
+
+             <div class= "mx-auto" style="width: 200px;">
+                <span class="label">Zip Code</span>
+                     <input type = "number" placeholder="Zip Code" id = "zip">
+             </div>
+             
+             <br>
+
+            
+             
+             <button type="button" class= "mx-auto" id="submit">Submit</button>
+             <br>
+            </div>
+
+
+            <script src="index.js"></script>
+            
+        </form> 
+    </body>
+</html>
