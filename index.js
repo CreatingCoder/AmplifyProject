@@ -25,12 +25,10 @@ document.getElementById("submit").onclick = function(){
     var state = document.getElementById("state").value;
     var zip = document.getElementById("zip").value;
 
+    //counts time in milliseconds from Jan 1, 1970 and up
+    const date = new Date();
+    var uniqueID = date.getTime();
     
-
-
-
-
-
 
 
     console.log("Full name is", fullName);
@@ -44,6 +42,6 @@ document.getElementById("submit").onclick = function(){
     console.log("City is", city);
     console.log("State is", state);
     console.log("Zip is", zip);
-
+    console.log("Complaint ID is", uniqueID);
 
 }
