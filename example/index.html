@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>ServiceNow</title>
+    <script>
+        // define the callAPI function that takes a first name and last name as parameters
+        var callAPI = (fullName,Org)=>{
+		
+            // instantiate a headers object
+            var myHeaders = new Headers();
+			
+            // add content type header to object
+            myHeaders.append("Content-Type", "application/json");
+			
+            // using built in JSON utility package turn object to string and store in a variable
+            var raw = JSON.stringify({"fullName":fullName,"org":org});
+			
+            // create a JSON object with parameters for API call and store in a variable
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+			
+            // make API call with parameters and use promises to get response
+            fetch("YOUR-API-INVOKE-URL", requestOptions)
+            .then(response => response.text())
+            .then(result => alert(JSON.parse(result).body))
+            .catch(error => console.log('error', error));
+        }
+    </script>
+
+  </head>
+  <body>
+    
+    <!--Bar at top of page-->
+    <div class="p-3 mb-4 bg-primary text-white">ServiceNow Form</div>
+
+
+    <!--Form start-->
+    <form class = "mx-auto" style="width: 400px;">
+
+        <!--Full Name-->
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" class="form-control" id="fName" placeholder="John Doe">
+          <br>
+        </div>
+
+        <!--Organization-->
+        <div class="form-group">
+            <label>Organization</label>
+            <input type="text" class="form-control" id="organization" placeholder="Organization">
+            <br>
+          </div>
+
+
+        <div class = "form-group">
+        <button type="button" class= "mx-auto" onclick="callAPI(document.getElementById('fName').value,document.getElementById('organization').value)">Submit</button>
+        </div>
+
+
+
+
+
+<!--
+
+            
+            <div class="form-group">
+                <label>Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                <br>
+              </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Example multiple select</label>
+          <select multiple class="form-control" id="exampleFormControlSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+      
+-->
+
+
+</form>
+  
+  </body>
+</html>
